@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Calories Countdown</string>
-    <string name="remaining_calories">Calorias restantes (kcal)</string>
-    <string name="to_substract_calories">Substrair Calorias</string>
-    <string name="feeding_calories_consumption">Alimentação (kcal)</string>
-    <string name="physical_activities_consumption">Atividades Físicas (kcal)</string>
-    <string name="total_to_be_subtracted">Total a subtrair:</string>
-    <string name="basal_metabolic_rate">Taxa metabólica basal:</string>
+    <string name="remaining_calories">Remaining Calories (kcal)</string>
+    <string name="to_substract_calories">Subtract Calories</string>
+    <string name="feeding_calories_consumption">Feeding (kcal)</string>
+    <string name="physical_activities_consumption">Physical Activities (kcal)</string>
+    <string name="total_to_be_subtracted">Total to subtract:</string>
+    <string name="basal_metabolic_rate">Basal metabolic rate:</string>
 </resources>
