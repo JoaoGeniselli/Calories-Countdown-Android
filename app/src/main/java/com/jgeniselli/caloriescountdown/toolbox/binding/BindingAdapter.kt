@@ -1,4 +1,4 @@
-package com.jgeniselli.caloriescountdown
+package com.jgeniselli.caloriescountdown.toolbox.binding
 
 import android.widget.EditText
 import androidx.core.widget.addTextChangedListener

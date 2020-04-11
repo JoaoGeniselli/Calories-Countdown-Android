@@ -1,11 +1,11 @@
-package com.jgeniselli.caloriescountdown
+package com.jgeniselli.caloriescountdown.toolbox.livedata
 
 /**
  * Used as a wrapper for data that is exposed via a LiveData that represents an event.
  */
 open class Event<out T>(private val content: T) {
 
-    private var hasBeenHandled = false
+    var hasBeenHandled = false
         private set // Allow external read but not write
 
     /**

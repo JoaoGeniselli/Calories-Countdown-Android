@@ -1,10 +1,12 @@
-package com.jgeniselli.caloriescountdown
+package com.jgeniselli.caloriescountdown.countdown
 
 import androidx.lifecycle.*
+import com.jgeniselli.caloriescountdown.storage.CaloriesGoalRepository
+import com.jgeniselli.caloriescountdown.toolbox.livedata.Event
 import kotlinx.coroutines.launch
 
 class MainViewModel(
-    private val repository: Repository
+    private val repository: CaloriesGoalRepository
 ) : ViewModel(), LifecycleObserver {
 
     private val _basalMetabolicRate = MutableLiveData<String>()
@@ -63,7 +65,8 @@ class MainViewModel(
             _remainingCalories.value = updatedGoal.toString()
             feedingCaloriesText.value = ""
             physicalActivitiesCaloriesText.value = ""
-            _clearFocus.value = Event(Unit)
+            _clearFocus.value =
+                Event(Unit)
         }
     }
 }

@@ -1,6 +1,6 @@
-package com.jgeniselli.caloriescountdown
+package com.jgeniselli.caloriescountdown.storage
 
-class Repository {
+class CaloriesGoalRepository {
 
     private var remainingCalories = 65400
     private var basalMetabolicRate = 1947
