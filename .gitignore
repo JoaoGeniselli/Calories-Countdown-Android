@@ -13,6 +13,8 @@
 .externalNativeBuild
 .cxx
 
+.idea
+
 # Created by https://www.gitignore.io/api/macos,gradle,android,androidstudio
 # Edit at https://www.gitignore.io/?templates=macos,gradle,android,androidstudio
 
