@@ -8,4 +8,5 @@
     <string name="total_to_be_subtracted">Total a subtrair:</string>
     <string name="basal_metabolic_rate">Taxa metabólica basal:</string>
     <string name="kcal_by_day">%d kcal/dia</string>
+    <string name="edit_goal">Editar meta</string>
 </resources>

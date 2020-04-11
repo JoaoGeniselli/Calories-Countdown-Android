@@ -1,6 +1,8 @@
 package com.jgeniselli.caloriescountdown.countdown
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
@@ -28,5 +30,24 @@ class MainActivity : AppCompatActivity() {
                 input_physical_activities_calories.clearFocus()
             }
         })
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onContextItemSelected(item: MenuItem?): Boolean {
+        item?.let {
+            if (it.itemId == R.id.edit_goal) {
+                openGoalEditor()
+                return true
+            }
+        }
+        return super.onContextItemSelected(item)
+    }
+
+    private fun openGoalEditor() {
+
     }
 }
