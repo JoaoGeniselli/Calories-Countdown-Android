@@ -1,4 +1,5 @@
 <resources>
+    <string translatable="false" name="empty"/>
     <string name="app_name">Calories Countdown</string>
     <string name="remaining_calories">Remaining Calories (kcal)</string>
     <string name="to_substract_calories">Subtract Calories</string>
@@ -6,4 +7,10 @@
     <string name="physical_activities_consumption">Physical Activities (kcal)</string>
     <string name="total_to_be_subtracted">Total to subtract:</string>
     <string name="basal_metabolic_rate">Basal metabolic rate:</string>
+    <string name="kcal_by_day">%d kcal/day</string>
+
+    <plurals name="kilocalories">
+        <item quantity="one">%d kcal</item>
+        <item quantity="other">%d kcals</item>
+    </plurals>
 </resources>

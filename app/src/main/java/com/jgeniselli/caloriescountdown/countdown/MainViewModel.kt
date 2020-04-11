@@ -9,18 +9,18 @@ class MainViewModel(
     private val repository: CaloriesGoalRepository
 ) : ViewModel(), LifecycleObserver {
 
-    private val _basalMetabolicRate = MutableLiveData<String>()
+    private val _basalMetabolicRate = MutableLiveData(0)
     private val _remainingCalories = MutableLiveData<String>()
-    private val _totalToBeSubtracted = MutableLiveData<String>()
-    private val _subtractButtonEnabled = MutableLiveData<Boolean>()
+    private val _totalToBeSubtracted = MutableLiveData(0)
+    private val _subtractButtonEnabled = MutableLiveData(false)
     private val _clearFocus = MutableLiveData<Event<Unit>>()
 
     val feedingCaloriesText = MutableLiveData<String>()
     val physicalActivitiesCaloriesText = MutableLiveData<String>()
 
-    val basalMetabolicRateText: LiveData<String> get() = _basalMetabolicRate
+    val basalMetabolicRate: LiveData<Int> get() = _basalMetabolicRate
     val remainingCaloriesText: LiveData<String> get() = _remainingCalories
-    val totalToBeSubtractedText: LiveData<String> get() = _totalToBeSubtracted
+    val totalToBeSubtracted: LiveData<Int> get() = _totalToBeSubtracted
     val subtractButtonEnabled: LiveData<Boolean> get() = _subtractButtonEnabled
     val clearFocus: LiveData<Event<Unit>> get() = _clearFocus
 
@@ -34,7 +34,8 @@ class MainViewModel(
     fun start() {
         viewModelScope.launch {
             _remainingCalories.value = repository.getRemainingCalories().toString()
-            _basalMetabolicRate.value = repository.getBasalMetabolicRate().toString()
+            _basalMetabolicRate.value = repository.getBasalMetabolicRate()
+            _totalToBeSubtracted.value = 0
             _subtractButtonEnabled.value = false
         }
     }
@@ -55,7 +56,7 @@ class MainViewModel(
             feedingCalories,
             physicalActivitiesCalories
         )
-        _totalToBeSubtracted.value = caloriesToSubtract.toString()
+        _totalToBeSubtracted.value = caloriesToSubtract
     }
 
     fun subtractCalories() {
@@ -65,8 +66,8 @@ class MainViewModel(
             _remainingCalories.value = updatedGoal.toString()
             feedingCaloriesText.value = ""
             physicalActivitiesCaloriesText.value = ""
-            _clearFocus.value =
-                Event(Unit)
+            _clearFocus.value = Event(Unit)
+            _totalToBeSubtracted.value = 0
         }
     }
 }
