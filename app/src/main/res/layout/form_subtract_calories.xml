@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.jgeniselli.caloriescountdown.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_feeding_calories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/feeding_calories_consumption"
+                android:imeOptions="actionNext"
+                android:inputType="numberSigned"
+                android:maxLines="1"
+                android:text="@={viewModel.feedingCaloriesText}"
+                app:onTextChanged="@{_ -> viewModel.onInputChanged()}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_physical_activities_calories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/physical_activities_consumption"
+                android:imeOptions="actionDone"
+                android:inputType="numberSigned"
+                android:maxLines="1"
+                android:text="@={viewModel.physicalActivitiesCaloriesText}"
+                app:onTextChanged="@{_ -> viewModel.onInputChanged()}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/label_basal_metabolic_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/basal_metabolic_rate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
+
+        <TextView
+            android:id="@+id/content_basal_metabolic_rate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@{viewModel.basalMetabolicRateText}"
+            android:textAlignment="textEnd"
+            app:layout_constraintBottom_toBottomOf="@+id/label_basal_metabolic_rate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_basal_metabolic_rate"
+            app:layout_constraintTop_toTopOf="@+id/label_basal_metabolic_rate"
+            tools:text="1950 kcal/dia" />
+
+        <TextView
+            android:id="@+id/label_total_to_be_substracted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/total_to_be_subtracted"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_basal_metabolic_rate" />
+
+        <TextView
+            android:id="@+id/content_total_to_be_subtracted"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@{viewModel.totalToBeSubtractedText}"
+            android:textAlignment="textEnd"
+            app:layout_constraintBottom_toBottomOf="@+id/label_total_to_be_substracted"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_total_to_be_substracted"
+            app:layout_constraintTop_toTopOf="@+id/label_total_to_be_substracted"
+            tools:text="600 kcal" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
