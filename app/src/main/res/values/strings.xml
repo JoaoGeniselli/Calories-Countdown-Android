@@ -14,4 +14,9 @@
         <item quantity="one">%d kcal</item>
         <item quantity="other">%d kcals</item>
     </plurals>
+
+    <plurals name="kilograms">
+        <item quantity="one">%d kg</item>
+        <item quantity="other">%d kgs</item>
+    </plurals>
 </resources>

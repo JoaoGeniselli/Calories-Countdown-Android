@@ -1,8 +1,8 @@
-package com.jgeniselli.caloriescountdown.countdown
+package com.jgeniselli.weightgoal.countdown
 
 import androidx.lifecycle.*
-import com.jgeniselli.caloriescountdown.storage.CaloriesGoalRepository
-import com.jgeniselli.caloriescountdown.toolbox.livedata.Event
+import com.jgeniselli.weightgoal.storage.CaloriesGoalRepository
+import com.jgeniselli.weightgoal.toolbox.livedata.Event
 import kotlinx.coroutines.launch
 
 class MainViewModel(

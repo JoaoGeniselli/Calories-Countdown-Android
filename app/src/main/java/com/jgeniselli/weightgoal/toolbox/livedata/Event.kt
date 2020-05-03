@@ -1,4 +1,4 @@
-package com.jgeniselli.caloriescountdown.toolbox.livedata
+package com.jgeniselli.weightgoal.toolbox.livedata
 
 /**
  * Used as a wrapper for data that is exposed via a LiveData that represents an event.

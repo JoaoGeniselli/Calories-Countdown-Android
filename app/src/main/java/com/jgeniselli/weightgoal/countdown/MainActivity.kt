@@ -1,4 +1,4 @@
-package com.jgeniselli.caloriescountdown.countdown
+package com.jgeniselli.weightgoal.countdown
 
 import android.os.Bundle
 import android.view.Menu
@@ -6,8 +6,8 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
-import com.jgeniselli.caloriescountdown.R
-import com.jgeniselli.caloriescountdown.databinding.ActivityMainBinding
+import com.jgeniselli.weightgoal.R
+import com.jgeniselli.weightgoal.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.form_subtract_calories.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -49,5 +49,28 @@ class MainActivity : AppCompatActivity() {
 
     private fun openGoalEditor() {
 
+    }
+}
+
+typealias Stacktrace = () -> Unit
+
+class ConsoleNotification private constructor(
+    val title: String,
+    val message: String,
+    val stacktrace: Stacktrace
+) {
+
+    companion object { // == "Statics"
+        fun createWarning(message: String, stacktrace: Stacktrace): ConsoleNotification {
+            return ConsoleNotification("Warning!", message, stacktrace)
+        }
+
+        fun createError(message: String, stacktrace: Stacktrace): ConsoleNotification {
+            return ConsoleNotification("Error!", message, stacktrace)
+        }
+
+        fun createError(title: String, message: String, stacktrace: Stacktrace): ConsoleNotification {
+            return ConsoleNotification(title, message, stacktrace)
+        }
     }
 }
