@@ -51,26 +51,3 @@ class MainActivity : AppCompatActivity() {
 
     }
 }
-
-typealias Stacktrace = () -> Unit
-
-class ConsoleNotification private constructor(
-    val title: String,
-    val message: String,
-    val stacktrace: Stacktrace
-) {
-
-    companion object { // == "Statics"
-        fun createWarning(message: String, stacktrace: Stacktrace): ConsoleNotification {
-            return ConsoleNotification("Warning!", message, stacktrace)
-        }
-
-        fun createError(message: String, stacktrace: Stacktrace): ConsoleNotification {
-            return ConsoleNotification("Error!", message, stacktrace)
-        }
-
-        fun createError(title: String, message: String, stacktrace: Stacktrace): ConsoleNotification {
-            return ConsoleNotification(title, message, stacktrace)
-        }
-    }
-}
