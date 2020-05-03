@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Contagem Regressiva de Calorias</string>
-    <string name="remaining_calories">Calorias restantes (kcal)</string>
-    <string name="to_substract_calories">Subtrair Calorias</string>
-    <string name="feeding_calories_consumption">Alimentação (kcal)</string>
-    <string name="physical_activities_consumption">Atividades Físicas (kcal)</string>
-    <string name="total_to_be_subtracted">Total a subtrair:</string>
-    <string name="basal_metabolic_rate">Taxa metabólica basal:</string>
-    <string name="kcal_by_day">%d kcal/dia</string>
-    <string name="edit_goal">Editar meta</string>
+    <string name="app_name">Meta de Peso</string>
+    <string name="remaining_kilograms">Quilos restantes</string>
+    <string name="to_subtract_kilograms">Subtrair Quilos</string>
 </resources>

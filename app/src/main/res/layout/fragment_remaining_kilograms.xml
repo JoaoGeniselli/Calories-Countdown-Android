@@ -20,20 +20,20 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/shape_rounded_border"
             android:fontFamily="@font/allerta_stencil"
-            android:text="@{viewModel.remainingCaloriesText}"
+            android:text="@{viewModel.remainingKilograms}"
             android:textAlignment="center"
             android:textSize="36sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title"
-            tools:text="70.000" />
+            tools:text="11.9" />
 
         <TextView
             android:id="@+id/title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/remaining_calories"
+            android:text="@string/remaining_kilograms"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
